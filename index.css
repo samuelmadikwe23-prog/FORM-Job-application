@@ -213,4 +213,5 @@ form .buttons button , .nextbtn{
     display: none;
     opacity: 0;
     transform: translateX(-50px);
+
 }
