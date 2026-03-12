@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB APPLICATION</title>
+    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <header>Job Application</header>
+
+        <form action="#">
+            <div class="form-first">
+                <div class="details-personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter Your Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date Of Birth</label>
+                            <input type="date" placeholder="Enter D.O.B" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter Your Email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter Mobile Number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <input type="text" placeholder="Enter Gender" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Marital Status</label>
+                            <input type="text" placeholder="Marital Status" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Identity Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>ID Type</label>
+                            <input type="text" placeholder="Enter ID type" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>ID Number</label>
+                            <input type="number" placeholder="Enter ID Number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Issued date</label>
+                            <input type="date" placeholder="Enter ID Issued Date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Issued District</label>
+                            <input type="text" placeholder="Enter District" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <input type="text" placeholder="Enter Gender As On ID" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Expiry Date</label>
+                            <input type="date" placeholder="Expiry" required>
+                        </div>
+
+                    </div>
+
+                    <button class="nextbtn">
+                        <span class="btntext">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+             <div class="form-second">
+                <div class="details address">
+                    <span class="title">Address Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Address Type</label>
+                            <input type="text" placeholder="Enter Address Type" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Naitionality</label>
+                            <input type="text" placeholder="Enter Naitionality" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>District</label>
+                            <input type="text" placeholder="Enter Your District" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Ward/Kgotla</label>
+                            <input type="text" placeholder="Enter Ward/Kgotla Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Street Name</label>
+                            <input type="text" placeholder="Enter Street Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Occupation</label>
+                            <input type="text" placeholder="Occupation Status" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+                   <div class="details family">
+    <span class="title">Apply For Job-Role</span>
+
+    <div class="fields">
+        <div class="input-field">
+            <label>Job Role</label>
+            <select name="job-role" id="job-role">
+                <option value="">Select Job Role</option>
+                <option value="frontend">Frontend Developer</option>
+                <option value="backend">Backend Developer</option>
+                <option value="cloud-architect">Cloud Architect</option>
+                <option value="database-manager">Database Manager</option>
+                <option value="cloud-engineer">Cloud Engineer</option>
+                <option value="fullstack">Full Stack Developer</option>
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label>Date of Application</label>
+            <input type="date" name="application-date" id="application-date" required>
+        </div>
+
+        <div class="input-field">
+            <label>Upload CV</label>
+            <input type="file" name="cv" id="cv" accept=".pdf,.doc,.docx" required>
+        </div>
+    </div>
+
+
+    <div class="buttons">
+    <button class="backbtn">
+        <i class="uil uil-arrow-left"></i>
+        <span class="btntext">Back</span>
+    </button>
+
+    <button class="nextbtn">
+        <span class="btntext">Submit</span>
+        <i class="uil uil-navigator"></i>
+    </button>
+</div>
+    
+</div>
+    </div>
+
+    
+</div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+    const formFirst = document.querySelector(".form-first");
+    const formSecond = document.querySelector(".form-second");
+    const nextBtn = document.querySelector(".form-first .nextbtn");
+    const backBtn = document.querySelector(".backbtn");
+
+    // Hide second form on load
+    formSecond.classList.add("form-hidden");
+
+    nextBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        // Get all required inputs in the first form
+        const requiredInputs = formFirst.querySelectorAll("input[required]");
+        let allFilled = true;
+
+        requiredInputs.forEach(input => {
+            if(input.value.trim() === "") {
+                allFilled = false;
+                input.style.borderColor = "red";
+            } else {
+                input.style.borderColor = "#aaa";
+            }
+        });
+
+        if(!allFilled) {
+            alert("Please fill in all required fields before proceeding.");
+            return;
+        }
+
+        // Animate out
+        formFirst.style.opacity = "0";
+        formFirst.style.transform = "translateX(-50px)";
+
+        setTimeout(() => {
+            formFirst.classList.add("form-hidden");
+            formSecond.classList.remove("form-hidden");
+
+            // Animate in
+            setTimeout(() => {
+                formSecond.style.opacity = "1";
+                formSecond.style.transform = "translateX(0)";
+            }, 20);
+        }, 400);
+    });
+
+    backBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        // Animate out
+        formSecond.style.opacity = "0";
+        formSecond.style.transform = "translateX(50px)";
+
+        setTimeout(() => {
+            formSecond.classList.add("form-hidden");
+            formFirst.classList.remove("form-hidden");
+
+            // Animate in
+            setTimeout(() => {
+                formFirst.style.opacity = "1";
+                formFirst.style.transform = "translateX(0)";
+            }, 20);
+        }, 400);
+    });
+</script>
+
+
+</body>
+</html>
